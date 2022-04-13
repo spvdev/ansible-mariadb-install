@@ -44,3 +44,22 @@
     src: mariadb_logrotate.j2
     dest: /etc/logrotate.d/mysql
   notify: restart mariadb server
+
+- name: (DATABASE) Allow remote hosts to connect (Debian)
+  lineinfile:
+    path: /etc/mysql/mariadb.conf.d/50-server.cnf
+    backrefs: yes
+    regexp: '^bind-address'
+    line: 'bind-address            = {{ bind-address }}'
+    state: present
+  notify: restart mariadb
+  when: ansible_os_family == "Debian"
+
+- name: (DATABASE) Allow remote hosts to connect (Red Hat)
+  lineinfile:
+    path: /etc/my.cnf.d/server.cnf
+    state: present
+    insertafter: '^\[mysqld\]'
+    line: 'bind-address            = {{ bind-address }}'
+  notify: restart mariadbrh
+  when: ansible_os_family == "RedHat"
