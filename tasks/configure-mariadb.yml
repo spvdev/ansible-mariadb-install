@@ -52,7 +52,7 @@
     regexp: '^bind-address'
     line: 'bind-address            = {{ bind_address }}'
     state: present
-  notify: restart mariadb
+  notify: restart mariadb server
   when: ansible_os_family == "Debian"
 
 - name: (DATABASE) Allow remote hosts to connect (Red Hat)
@@ -61,5 +61,5 @@
     state: present
     insertafter: '^\[mysqld\]'
     line: 'bind-address            = {{ bind_address }}'
-  notify: restart mariadb
+  notify: restart mariadb server
   when: ansible_os_family == "RedHat"
