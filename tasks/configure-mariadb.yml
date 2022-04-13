@@ -50,7 +50,7 @@
     path: /etc/mysql/mariadb.conf.d/50-server.cnf
     backrefs: yes
     regexp: '^bind-address'
-    line: 'bind-address            = {{ bind-address }}'
+    line: 'bind-address            = {{ bind_address }}'
     state: present
   notify: restart mariadb
   when: ansible_os_family == "Debian"
@@ -60,6 +60,6 @@
     path: /etc/my.cnf.d/server.cnf
     state: present
     insertafter: '^\[mysqld\]'
-    line: 'bind-address            = {{ bind-address }}'
-  notify: restart mariadbrh
+    line: 'bind-address            = {{ bind_address }}'
+  notify: restart mariadb
   when: ansible_os_family == "RedHat"

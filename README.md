@@ -25,7 +25,7 @@ $ ansible-galaxy install mahdi22.mariadb_install
 | Variable                       | Default         | Comments                                                                                                     |
 | :---                           | :---            | :---                                                                                                         |
 | `mariadb_version     `         | '10.4'          | Set mariadb version: - v(10.5 10.4 10.3) RHEL/Centos 8, Debian 10, Ubuntu 20.04, Ubuntu 19.10. - v(10.5 10.4 10.3 10.2 10.1) RHEL/CentOS 7, Debian 9,  Ubuntu 18.04, Ubuntu 16.04                                                                                         |
-| `bind-address`                 | '127.0.0.1'     | Set this to the IP address of the network interface to listen on, or '0.0.0.0' to listen on all interfaces.  |
+| `bind_address`                 | '127.0.0.1'     | Set this to the IP address of the network interface to listen on, or '0.0.0.0' to listen on all interfaces.  |
 | `configure_swappiness`         | true            | When `true`, this role will set the "swappiness" value (see `mariadb_swappiness`.                            |
 | `database`                     | 'cdr'           | set the database name.                                                                                       |
 | `port`                         | 3306            | The port number used to listen to client requests                                                            |

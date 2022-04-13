@@ -24,3 +24,4 @@ database: cdr
 db_user_name: "userdata"
 db_user_password: "qwerty"
 priviliges: "ALL"
+bind_address: "127.0.0.1"
