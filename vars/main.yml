@@ -14,7 +14,6 @@ mariadb_config_file:
     - "query_cache_size  = 32M"
     - "log_error = /var/log/mariadb/error.log"
     - "unix_socket=OFF"
-    - "bind-address= 127.0.0.1"
 swappiness: "0"
 mariadb_service: mariadb
 mariadb_logrotate:
