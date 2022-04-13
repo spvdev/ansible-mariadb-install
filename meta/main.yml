@@ -1,7 +1,7 @@
 galaxy_info:
-  author: Mahdi Bourbita
+  author: Svilen Vasilev (original author Mahdi Bourbita)
   role_name: mariadb_install
-  description: Install and configure Mariadb server on Rhel/CentOS, Debian and Ubuntu ditributions
+  description: Install and configure Mariadb server on Rhel/CentOS, Debian and Ubuntu ditributions (forked from https://github.com/mahdi22/ansible-mariadb-install)
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -36,6 +36,7 @@ galaxy_info:
     versions:
       - buster
       - stretch
+      - bullseye
   - name: Ubuntu
     versions:
       - focal
